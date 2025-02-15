@@ -8,7 +8,8 @@ const jwt = require("jsonwebtoken");
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: "*", methods: ["GET", "POST"] },
+  cors: { origin: "https://real-time-chat-app-f837f2.netlify.app/", methods: ["GET", "POST"], allowedHeaders: ["Content-Type"],
+    credentials: true },
 });
 
 const JWT_SECRET = process.env.JWT_SECRET;
